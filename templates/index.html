@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .form-container {
+            width: 400px; /* Increased width */
+            padding: 30px; /* Increased padding */
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Disease Prediction using Chest X-Ray Images</h2>
+            <form action="/predict" method="post" enctype="multipart/form-data">
+                <label for="image">Upload X-Ray Image:</label><br>
+                    <h3>COVID</h3>
+                    <h3>PNEUMONIA</h3>
+                    <h3>NORMAL</h3>
+                <input type="file" id="image" name="image" accept="image/*"><br>
+                <input type="submit" value="Predict">
+            </form>
+            <div class="output">
+                {% if prediction_text %}
+                    <p>{{ prediction_text }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
