@@ -1,1 +1,1 @@
-# Detection_COVID-19_Chesst_X-Ray_Images
+# Detection_COVID-19_Chest_X-Ray_Images
